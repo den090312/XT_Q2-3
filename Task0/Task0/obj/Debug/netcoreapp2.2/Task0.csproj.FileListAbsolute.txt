@@ -1,0 +1,11 @@
+C:\Users\andri\Desktop\EPAM\task0\Task0\Task0\bin\Debug\netcoreapp2.2\Task0.deps.json
+C:\Users\andri\Desktop\EPAM\task0\Task0\Task0\bin\Debug\netcoreapp2.2\Task0.runtimeconfig.json
+C:\Users\andri\Desktop\EPAM\task0\Task0\Task0\bin\Debug\netcoreapp2.2\Task0.runtimeconfig.dev.json
+C:\Users\andri\Desktop\EPAM\task0\Task0\Task0\bin\Debug\netcoreapp2.2\Task0.dll
+C:\Users\andri\Desktop\EPAM\task0\Task0\Task0\bin\Debug\netcoreapp2.2\Task0.pdb
+C:\Users\andri\Desktop\EPAM\task0\Task0\Task0\obj\Debug\netcoreapp2.2\Task0.csprojAssemblyReference.cache
+C:\Users\andri\Desktop\EPAM\task0\Task0\Task0\obj\Debug\netcoreapp2.2\Task0.csproj.CoreCompileInputs.cache
+C:\Users\andri\Desktop\EPAM\task0\Task0\Task0\obj\Debug\netcoreapp2.2\Task0.AssemblyInfoInputs.cache
+C:\Users\andri\Desktop\EPAM\task0\Task0\Task0\obj\Debug\netcoreapp2.2\Task0.AssemblyInfo.cs
+C:\Users\andri\Desktop\EPAM\task0\Task0\Task0\obj\Debug\netcoreapp2.2\Task0.dll
+C:\Users\andri\Desktop\EPAM\task0\Task0\Task0\obj\Debug\netcoreapp2.2\Task0.pdb
