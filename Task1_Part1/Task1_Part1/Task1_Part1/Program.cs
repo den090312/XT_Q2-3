@@ -3,12 +3,13 @@ using System.Collections.Generic;
 
 namespace Task1_Part1
 {
-
+	[Flags]
 	public enum FontAdjustment
 	{
-		bold,
-		italic,
-		underline
+		Null = 0,
+		bold = 1,
+		italic = 2,
+		underline = 4
 	}
 
 	class Program
@@ -67,156 +68,135 @@ namespace Task1_Part1
 			Console.WriteLine("Сумма всех чисел меньше 1000, кратных 3 или 5: {0}", SumOfNumbers(1000));
 
 			Console.WriteLine("Задание №1.6. Для выхода нажмите Escape.");
-			var fontAdjustments = new List<FontAdjustment>();
+
+			FontAdjustment fontAdjustment = 0;
 
 			while (true)
 			{
 				Console.Write("Параметры надписи: ");
-				if (fontAdjustments.Count == 0) Console.Write("null");
-				else
-				{
-					for (int i = 0; i < fontAdjustments.Count; i++)
-					{
-						switch (fontAdjustments[i])
-						{
-							case FontAdjustment.bold:
-								if (i < fontAdjustments.Count - 1)
-									Console.Write("Bold, ");
-								else
-									Console.Write("Bold");
-								break;
-							case FontAdjustment.italic:
-								if (i < fontAdjustments.Count - 1)
-									Console.Write("Italic, ");
-								else
-									Console.Write("Italic");
-								break;
-							case FontAdjustment.underline:
-								if (i < fontAdjustments.Count - 1)
-									Console.Write("Underline, ");
-								else
-									Console.Write("Underline");
-								break;
-						}
-					}
-				}
+				if (fontAdjustment == FontAdjustment.Null) Console.Write("null");
+				if (fontAdjustment.HasFlag(FontAdjustment.bold))
+					Console.Write("Bold ");
+				if (fontAdjustment.HasFlag(FontAdjustment.italic))
+					Console.Write("Italic ");
+				if (fontAdjustment.HasFlag(FontAdjustment.underline))
+					Console.Write("Underline");
 				Console.WriteLine("\nВведите:" +
-					              "\n       1: bold" +
-	                              "\n       2: italic" +
-                                  "\n       3: underline");
+										  "\n       1: bold" +
+										  "\n       2: italic" +
+										  "\n       3: underline");
 				switch (Console.ReadKey().Key)
 				{
 					case ConsoleKey.D1:
-						if (fontAdjustments.Contains(FontAdjustment.bold))
-							fontAdjustments.Remove(FontAdjustment.bold);
+						if (fontAdjustment.HasFlag(FontAdjustment.bold))
+							fontAdjustment ^= FontAdjustment.bold;
 						else
-							fontAdjustments.Add(FontAdjustment.bold);
+							fontAdjustment |= FontAdjustment.bold;
 						break;
 					case ConsoleKey.D2:
-						if (fontAdjustments.Contains(FontAdjustment.italic))
-							fontAdjustments.Remove(FontAdjustment.italic);
+						if (fontAdjustment.HasFlag(FontAdjustment.bold))
+							fontAdjustment ^= FontAdjustment.italic;
 						else
-							fontAdjustments.Add(FontAdjustment.italic);
+							fontAdjustment |= FontAdjustment.italic;
 						break;
 					case ConsoleKey.D3:
-						if (fontAdjustments.Contains(FontAdjustment.underline))
-							fontAdjustments.Remove(FontAdjustment.underline);
+						if (fontAdjustment.HasFlag(FontAdjustment.bold))
+							fontAdjustment ^= FontAdjustment.underline;
 						else
-							fontAdjustments.Add(FontAdjustment.underline);
+							fontAdjustment |= FontAdjustment.underline;
 						break;
 				}
-				Console.WriteLine();
 				if (Console.ReadKey(true).Key == ConsoleKey.Escape)
 				{
 					break;
 				}
 			}
 		}
-		/// <summary>
-		/// Считает площадь прямоугольника со сторонами a и b
-		/// </summary>
-		/// <param name="a">Положительное целое число</param>
-		/// <param name="b">Положительное целое число</param>
-		/// <returns>Площадь прямоугольника</returns>
-		static int Rectangle(int a, int b)
-		{
-			return a * b;
-		}
-		/// <summary>
-		/// Выводит на экран N строк с от 1 до N символами *
-		/// </summary>
-		/// <param name="N">Положительное целое число</param>
-		static void Triangle(int N)
-		{
-			for (int i = 1; i <= N; i++)
+			/// <summary>
+			/// Считает площадь прямоугольника со сторонами a и b
+			/// </summary>
+			/// <param name="a">Положительное целое число</param>
+			/// <param name="b">Положительное целое число</param>
+			/// <returns>Площадь прямоугольника</returns>
+			static int Rectangle(int a, int b)
 			{
-				for (int j = 1; j <= i; j++)
-				{
-					Console.Write('*');
-				}
-				Console.WriteLine();
+				return a * b;
 			}
-		}
-		/// <summary>
-		/// Выводит треугольник из N строк
-		/// </summary>
-		/// <param name="N">Количество строк</param>
-		static void AnotherTriangle(int N)
-		{
-			PrintTriangle(N, N - 1);
-		}
-		/// <summary>
-		/// Выводит N треугольников в консоль
-		/// </summary>
-		/// <param name="N">Количество треугольников</param>
-		static void XmasTree(int N)
-		{
-			for (int i = 1; i <= N; i++)
+			/// <summary>
+			/// Выводит на экран N строк с от 1 до N символами *
+			/// </summary>
+			/// <param name="N">Положительное целое число</param>
+			static void Triangle(int N)
 			{
-				PrintTriangle(i, N - 1);
-			}
-		}
-		/// <summary>
-		/// Выводит треугольник с отступом перед ним в консоль 
-		/// </summary>
-		/// <param name="N">Количество строк треугольника</param>
-		/// <param name="triangleSpace">Отступ перед треугольником</param>
-		private static void PrintTriangle(int N, int triangleSpace)
-		{
-			int spaceCount = triangleSpace;
-			int starsCount = 1;
-			for (int i = 0; i < N; i++)
-			{
-				for (int j = 0; j < spaceCount; j++)
+				for (int i = 1; i <= N; i++)
 				{
-					Console.Write(" ");
-				}
-				for (int it = 0; it < starsCount; it++)
-				{
-					Console.Write("*");
-				}
-				spaceCount--;
-				starsCount += 2;
-				Console.WriteLine();
-			}
-		}
-		/// <summary>
-		/// Считает сумму всех чисел меньше N, кратных 3 или 5.
-		/// </summary>
-		/// <param name="N">Максимальное число</param>
-		/// <returns>Сумма всех чисел меньше N, кратных 3 или 5</returns>
-		static int SumOfNumbers(int N)
-		{
-			int sum = 0;
-			for (int i = 3; i < N; i++)
-			{
-				if (i % 3 == 0 || i % 5 == 0)
-				{
-					sum += i;
+					for (int j = 1; j <= i; j++)
+					{
+						Console.Write('*');
+					}
+					Console.WriteLine();
 				}
 			}
-			return sum;
-		}
+			/// <summary>
+			/// Выводит треугольник из N строк
+			/// </summary>
+			/// <param name="N">Количество строк</param>
+			static void AnotherTriangle(int N)
+			{
+				PrintTriangle(N, N - 1);
+			}
+			/// <summary>
+			/// Выводит N треугольников в консоль
+			/// </summary>
+			/// <param name="N">Количество треугольников</param>
+			static void XmasTree(int N)
+			{
+				for (int i = 1; i <= N; i++)
+				{
+					PrintTriangle(i, N - 1);
+				}
+			}
+			/// <summary>
+			/// Выводит треугольник с отступом перед ним в консоль 
+			/// </summary>
+			/// <param name="N">Количество строк треугольника</param>
+			/// <param name="triangleSpace">Отступ перед треугольником</param>
+			private static void PrintTriangle(int N, int triangleSpace)
+			{
+				int spaceCount = triangleSpace;
+				int starsCount = 1;
+				for (int i = 0; i < N; i++)
+				{
+					for (int j = 0; j < spaceCount; j++)
+					{
+						Console.Write(" ");
+					}
+					for (int it = 0; it < starsCount; it++)
+					{
+						Console.Write("*");
+					}
+					spaceCount--;
+					starsCount += 2;
+					Console.WriteLine();
+				}
+			}
+			/// <summary>
+			/// Считает сумму всех чисел меньше N, кратных 3 или 5.
+			/// </summary>
+			/// <param name="N">Максимальное число</param>
+			/// <returns>Сумма всех чисел меньше N, кратных 3 или 5</returns>
+			static int SumOfNumbers(int N)
+			{
+				int sum = 0;
+				for (int i = 3; i < N; i++)
+				{
+					if (i % 3 == 0 || i % 5 == 0)
+					{
+						sum += i;
+					}
+				}
+				return sum;
+			}
 
+		}
 	}
-}

@@ -9,3 +9,14 @@ C:\Users\andri\Desktop\EPAM\task1_part1\Task1_Part1\Task1_Part1\obj\Debug\netcor
 C:\Users\andri\Desktop\EPAM\task1_part1\Task1_Part1\Task1_Part1\obj\Debug\netcoreapp2.2\Task1_Part1.AssemblyInfo.cs
 C:\Users\andri\Desktop\EPAM\task1_part1\Task1_Part1\Task1_Part1\obj\Debug\netcoreapp2.2\Task1_Part1.dll
 C:\Users\andri\Desktop\EPAM\task1_part1\Task1_Part1\Task1_Part1\obj\Debug\netcoreapp2.2\Task1_Part1.pdb
+C:\Users\andri\Desktop\EPAM\Tasks\Task1_Part1\Task1_Part1\Task1_Part1\obj\Debug\netcoreapp2.2\Task1_Part1.csprojAssemblyReference.cache
+C:\Users\andri\Desktop\EPAM\Tasks\Task1_Part1\Task1_Part1\Task1_Part1\obj\Debug\netcoreapp2.2\Task1_Part1.csproj.CoreCompileInputs.cache
+C:\Users\andri\Desktop\EPAM\Tasks\Task1_Part1\Task1_Part1\Task1_Part1\obj\Debug\netcoreapp2.2\Task1_Part1.AssemblyInfoInputs.cache
+C:\Users\andri\Desktop\EPAM\Tasks\Task1_Part1\Task1_Part1\Task1_Part1\obj\Debug\netcoreapp2.2\Task1_Part1.AssemblyInfo.cs
+C:\Users\andri\Desktop\EPAM\Tasks\Task1_Part1\Task1_Part1\Task1_Part1\obj\Debug\netcoreapp2.2\Task1_Part1.dll
+C:\Users\andri\Desktop\EPAM\Tasks\Task1_Part1\Task1_Part1\Task1_Part1\obj\Debug\netcoreapp2.2\Task1_Part1.pdb
+C:\Users\andri\Desktop\EPAM\Tasks\Task1_Part1\Task1_Part1\Task1_Part1\bin\Debug\netcoreapp2.2\Task1_Part1.deps.json
+C:\Users\andri\Desktop\EPAM\Tasks\Task1_Part1\Task1_Part1\Task1_Part1\bin\Debug\netcoreapp2.2\Task1_Part1.runtimeconfig.json
+C:\Users\andri\Desktop\EPAM\Tasks\Task1_Part1\Task1_Part1\Task1_Part1\bin\Debug\netcoreapp2.2\Task1_Part1.runtimeconfig.dev.json
+C:\Users\andri\Desktop\EPAM\Tasks\Task1_Part1\Task1_Part1\Task1_Part1\bin\Debug\netcoreapp2.2\Task1_Part1.dll
+C:\Users\andri\Desktop\EPAM\Tasks\Task1_Part1\Task1_Part1\Task1_Part1\bin\Debug\netcoreapp2.2\Task1_Part1.pdb
