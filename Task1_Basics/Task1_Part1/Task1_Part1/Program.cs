@@ -80,7 +80,7 @@ namespace Task1_Part1
 				if (fontAdjustment.HasFlag(FontAdjustment.italic))
 					Console.Write("Italic ");
 				if (fontAdjustment.HasFlag(FontAdjustment.underline))
-					Console.Write("Underline");
+					Console.Write("Underline ");
 				Console.WriteLine("\nВведите:" +
 										  "\n       1: bold" +
 										  "\n       2: italic" +
