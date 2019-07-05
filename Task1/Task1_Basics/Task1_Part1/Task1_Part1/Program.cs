@@ -94,13 +94,13 @@ namespace Task1_Part1
 							fontAdjustment |= FontAdjustment.bold;
 						break;
 					case ConsoleKey.D2:
-						if (fontAdjustment.HasFlag(FontAdjustment.bold))
+						if (fontAdjustment.HasFlag(FontAdjustment.italic))
 							fontAdjustment ^= FontAdjustment.italic;
 						else
 							fontAdjustment |= FontAdjustment.italic;
 						break;
 					case ConsoleKey.D3:
-						if (fontAdjustment.HasFlag(FontAdjustment.bold))
+						if (fontAdjustment.HasFlag(FontAdjustment.underline))
 							fontAdjustment ^= FontAdjustment.underline;
 						else
 							fontAdjustment |= FontAdjustment.underline;
