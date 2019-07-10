@@ -34,9 +34,19 @@ namespace Task2_1
 
 	class Round
 	{
-		public double Radius { private set; get; }
-		public double X { private set; get; }
-		public double Y { private set; get; }
+		private double radius;
+		public double Radius
+		{
+			set
+			{
+				if (value >= 0)
+					radius = value;
+				else throw new ArgumentException("Wrong argument: radius cannot be negative.");
+			}
+			get => radius;
+		}
+		public double X { set; get; }
+		public double Y { set; get; }
 
 		public Round(double Radius, double X, double Y)
 		{

@@ -31,7 +31,8 @@ namespace Task2_3
 				return;
 			}
 			Console.Write("Введите дату рождения в формате dd.mm.yyyy: ");
-			if (!DateTime.TryParse(Console.ReadLine(), out DateTime Birthdate)){
+			if (!DateTime.TryParse(Console.ReadLine(), out DateTime Birthdate))
+			{
 				Console.WriteLine("Неверно введены данные");
 				return;
 			}
@@ -42,18 +43,48 @@ namespace Task2_3
 
 	class User
 	{
+		private string name;
+		private string surname;
+		private string patronymic;
 		/// <summary>
 		/// Имя
 		/// </summary>
-		public string Name { private set; get; }
+		public string Name
+		{
+			set
+			{
+				if (value != "")
+					name = value;
+				else throw new ArgumentException("Wrong argument: name cannot be empty.");
+			}
+			get => name;
+		}
 		/// <summary>
 		/// Фамилия
 		/// </summary>
-		public string Surname { private set; get; }
+		public string Surname
+		{
+			set
+			{
+				if (value != "")
+					surname = value;
+				else throw new ArgumentException("Wrong argument: surname cannot be empty.");
+			}
+			get => surname;
+		}
 		/// <summary>
 		/// Отчество
 		/// </summary>
-		public string Patronymic { private set; get; }
+		public string Patronymic
+		{
+			set
+			{
+				if (value != "")
+					patronymic = value;
+				else throw new ArgumentException("Wrong argument: patronymic cannot be empty.");
+			}
+			get => patronymic;
+		}
 		/// <summary>
 		/// Дата рождения
 		/// </summary>

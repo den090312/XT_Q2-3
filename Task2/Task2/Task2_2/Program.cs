@@ -34,9 +34,39 @@ namespace Task2_2
 
 	class Triangle
 	{
-		public double A { private set; get; }
-		public double B { private set; get; }
-		public double C { private set; get; }
+		private double a;
+		private double b;
+		private double c;
+		public double A
+		{
+			set
+			{
+				if (value >= 0)
+					a = value;
+				else throw new ArgumentException("Wrong argument: side cannot be negative.");
+			}
+			get => a;
+		}
+		public double B
+		{
+			set
+			{
+				if (value >= 0)
+					b = value;
+				else throw new ArgumentException("Wrong argument: side cannot be negative.");
+			}
+			get => b;
+		}
+		public double C
+		{
+			set
+			{
+				if (value >= 0)
+					c = value;
+				else throw new ArgumentException("Wrong argument: side cannot be negative.");
+			}
+			get => c;
+		}
 
 		public Triangle(double A, double B, double C)
 		{
