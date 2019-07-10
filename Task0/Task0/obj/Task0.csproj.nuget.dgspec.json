@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andri\\Desktop\\EPAM\\task0\\Task0\\Task0\\Task0.csproj": {}
+    "C:\\Users\\andri\\Desktop\\EPAM\\Tasks\\Task0\\Task0\\Task0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andri\\Desktop\\EPAM\\task0\\Task0\\Task0\\Task0.csproj": {
+    "C:\\Users\\andri\\Desktop\\EPAM\\Tasks\\Task0\\Task0\\Task0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andri\\Desktop\\EPAM\\task0\\Task0\\Task0\\Task0.csproj",
+        "projectUniqueName": "C:\\Users\\andri\\Desktop\\EPAM\\Tasks\\Task0\\Task0\\Task0.csproj",
         "projectName": "Task0",
-        "projectPath": "C:\\Users\\andri\\Desktop\\EPAM\\task0\\Task0\\Task0\\Task0.csproj",
+        "projectPath": "C:\\Users\\andri\\Desktop\\EPAM\\Tasks\\Task0\\Task0\\Task0.csproj",
         "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andri\\Desktop\\EPAM\\task0\\Task0\\Task0\\obj\\",
+        "outputPath": "C:\\Users\\andri\\Desktop\\EPAM\\Tasks\\Task0\\Task0\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
