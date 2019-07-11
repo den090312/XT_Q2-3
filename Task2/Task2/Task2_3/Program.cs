@@ -41,7 +41,7 @@ namespace Task2_3
 		}
 	}
 
-	class User
+	public class User
 	{
 		private string name;
 		private string surname;
