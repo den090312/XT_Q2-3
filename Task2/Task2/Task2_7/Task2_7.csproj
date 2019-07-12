@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4A0F53B7-CB10-453F-AF5E-B21EDA7E5C00}</ProjectGuid>
+    <ProjectGuid>{1B24C944-A817-4FBB-B5E7-129C2EB761D3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task2_1</RootNamespace>
-    <AssemblyName>Task2_1</AssemblyName>
+    <RootNamespace>Task2_7</RootNamespace>
+    <AssemblyName>Task2_7</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Figure.cs" />
+    <Compile Include="DrawableFigures.cs" />
+    <Compile Include="Figures.cs" />
+    <Compile Include="IDrawable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Task2_1\Task2_1.csproj">
+      <Project>{4a0f53b7-cb10-453f-af5e-b21eda7e5c00}</Project>
+      <Name>Task2_1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Task2_6\Task2_6.csproj">
+      <Project>{1423f86c-600e-40fa-bedb-351ae8d01811}</Project>
+      <Name>Task2_6</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

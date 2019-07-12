@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Figure;
 
 namespace Task2_6
 {
@@ -21,7 +18,7 @@ namespace Task2_6
 		}
 	}
 
-	class Ring
+	public class Ring
 	{
 		public Point2D Center { get; set; }
 
@@ -62,18 +59,6 @@ namespace Task2_6
 			this.Center = Center;
 			this.OuterRadius = OuterRadius;
 			this.InnerRadius = InnerRadius;
-		}
-	}
-
-	struct Point2D
-	{
-		public double X { get; private set; }
-		public double Y { get; private set; }
-
-		public Point2D(int X, int Y)
-		{
-			this.X = X;
-			this.Y = Y;
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Figure;
 
 namespace Task2_1
 {
@@ -32,7 +33,7 @@ namespace Task2_1
 		}
 	}
 
-	class Round
+	public class Round
 	{
 		private double radius;
 		public double Radius
@@ -45,14 +46,13 @@ namespace Task2_1
 			}
 			get => radius;
 		}
-		public double X { set; get; }
-		public double Y { set; get; }
+
+		public Point2D Center { get; set; }
 
 		public Round(double Radius, double X, double Y)
 		{
 			this.Radius = Radius;
-			this.X = X;
-			this.Y = Y;
+			this.Center = new Point2D(X, Y);
 		}
 		/// <summary>
 		/// Длина описанной окружности
