@@ -11,7 +11,7 @@ namespace Task2_5
 			Console.WriteLine("Имя: {0}", employee.Name);
 			Console.WriteLine("Фамилия: {0}", employee.Surname);
 			Console.WriteLine("Отчество: {0}", employee.Patronymic);
-			Console.WriteLine("Дата рождения: {0}", employee.Birthdate);
+			Console.WriteLine("Дата рождения: {0:dd.MM.yyyy}", employee.Birthdate);
 			Console.WriteLine("Должность: {0}", employee.Position);
 			Console.WriteLine("Стаж: {0}", employee.Expirience);
 		}
