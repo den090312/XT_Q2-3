@@ -10,6 +10,14 @@ namespace Task2_8
 	{
 		static void Main(string[] args)
 		{
+			Mage mage = new Mage(new Vector2D(0, 1), 4);
+			Warrior warrior = new Warrior(new Vector2D(0, 1));
+			mage.FireStorm(warrior);
+			warrior.BladeFurry(mage);
+			Wolf wolf = new Wolf(new Vector2D(0, 0));
+			Console.WriteLine("wolf spawned here: [{0}, {1}]", wolf.Position.X, wolf.Position.Y);
+			wolf.Move();
+			Console.WriteLine("wolf moved here: [{0}, {1}]", wolf.Position.X, wolf.Position.Y);
 		}
 	}
 }
@@ -54,7 +62,7 @@ abstract class Healthy : GameObject
 		get => _health;
 		set
 		{
-			if (_health > value)
+			if (value > 0)
 				_health = value;
 			else throw new ArgumentException("Wrong argument: health cannot be negative or zero.");
 		}
@@ -121,9 +129,9 @@ abstract class Unit : Healthy
 		get => _armor;
 		set
 		{
-			if (_armor > 0)
+			if (value > 0)
 				_armor = value;
-			else if (_armor > 100)
+			else if (value > 100)
 				throw new ArgumentException("Wrong argument: armor cannot be greater then 100.");
 			else throw new ArgumentException("Wrong argument: armor cannot be negative or zero.");
 		}
@@ -254,7 +262,7 @@ class Mage : Unit
 		get { return _spellDamage; }
 		set
 		{
-			if (_spellDamage > 0)
+			if (value > 0)
 				_spellDamage = value;
 			else throw new ArgumentException("Wrong argument: spell damage cannot be negative or zero.");
 		}
