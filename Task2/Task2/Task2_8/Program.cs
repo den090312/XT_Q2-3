@@ -18,6 +18,25 @@ namespace Task2_8
 			Console.WriteLine("wolf spawned here: [{0}, {1}]", wolf.Position.X, wolf.Position.Y);
 			wolf.Move();
 			Console.WriteLine("wolf moved here: [{0}, {1}]", wolf.Position.X, wolf.Position.Y);
+
+			Console.WriteLine("Stats of a mage before eating bonuses:");
+			Console.WriteLine("Speed: {0}", mage.Speed);
+			Console.WriteLine("Health: {0}", mage.Health);
+			Console.WriteLine("Spawning bonuses.");
+			Bonus[] bonuses =
+			{
+				new Cherry(new Vector2D(3, 4), 10),
+				new Cherry(new Vector2D(5, 5), 15),
+				new Apple(new Vector2D(6, 6), 3),
+				new Apple(new Vector2D(7, 7), 6)
+			};
+			foreach (Bonus b in bonuses)
+			{
+				b.TakeBonus(mage);
+			}
+			Console.WriteLine("Stats of a mage after eating bonuses:");
+			Console.WriteLine("Speed: {0}", mage.Speed);
+			Console.WriteLine("Health: {0}", mage.Health);
 		}
 	}
 }
@@ -362,7 +381,7 @@ class Cherry : Bonus
 	{
 		Console.WriteLine("{0} taked {1}", recipient.Name, Name);
 		recipient.Health += HealthBonus;
-		Destroy();
+		//Destroy();
 	}
 }
 
@@ -394,6 +413,6 @@ class Apple : Bonus
 	{
 		Console.WriteLine("{0} taked {1}", recipient.Name, Name);
 		recipient.Speed += SpeedBonus;
-		Destroy();
+		//Destroy();
 	}
 }
