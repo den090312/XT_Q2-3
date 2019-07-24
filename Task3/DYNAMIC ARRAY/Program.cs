@@ -65,13 +65,13 @@ namespace DYNAMIC_ARRAY
 
 	}
 
-	class DynamicArray<T> : IEnumerable, IEnumerable<T>
+	public class DynamicArray<T> : IEnumerable, IEnumerable<T>
 	{
-		private T[] array;
+		protected T[] array;
 		/// <summary>
 		/// Длина массива
 		/// </summary>
-		public int Length { get; private set; }
+		public int Length { get; protected set; }
 		/// <summary>
 		/// Ёмкость массива
 		/// </summary>
