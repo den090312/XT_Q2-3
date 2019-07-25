@@ -7,31 +7,31 @@ namespace Task1_Part2
 	{
 		static void Main(string[] args)
 		{
-			Console.Write("Задание 1.11. Введите строку s: ");
+			Console.Write("Task 1.11. Enter the string s: ");
 			string s = Console.ReadLine();
-			Console.WriteLine("Средняя длина слов в строке s: {0}", AverrageStringLength(s));
-			Console.Write("Задание 1.12. Введите строку s1: ");
+			Console.WriteLine("Average word length per line s: {0}", AverrageStringLength(s));
+			Console.Write("Task 1.12. Enter the string s1: ");
 			string s1 = Console.ReadLine();
-			Console.Write("Введите строку s2: ");
+			Console.Write("Enter the string s2: ");
 			string s2 = Console.ReadLine();
 			CharDoubler(ref s1, s2);
-			Console.WriteLine("Новая строка: {0}", s1);
+			Console.WriteLine("New line: {0}", s1);
 		}
 
 		/// <summary>
-		/// Вычисляет среднюю длину слов в строке
+		/// Calculates the average word length per line.
 		/// </summary>
-		/// <param name="s">Строка для вычислений</param>
-		/// <returns>Средняя длина слов в строке</returns>
+		/// <param name="s">String for calculations</param>
+		/// <returns>Average word length per line</returns>
 		static int AverrageStringLength(string s) =>
-			AverrageOfArray(wordsLength(s));
+			AverrageOfArray(WordsLength(s));
 
 		/// <summary>
-		/// Возвращает длины слов в строке
+		/// Returns the length of words in a string.
 		/// </summary>
-		/// <param name="s">Строка для вычислений</param>
-		/// <returns>Длины слов в строке</returns>
-		static List<int> wordsLength(string s)
+		/// <param name="s">String for calculations</param>
+		/// <returns>Line lengths</returns>
+		static List<int> WordsLength(string s)
 		{
 			var buff = new List<int>();
 			int index = 0;
@@ -51,10 +51,10 @@ namespace Task1_Part2
 		}
 
 		/// <summary>
-		/// Находит среднее арифметическое чисел в List
+		/// Finds the arithmetic average of numbers in the List
 		/// </summary>
-		/// <param name="intList">Набор целых чисел</param>
-		/// <returns>Среднее арифметическое</returns>
+		/// <param name="intList">A set of integers</param>
+		/// <returns>Average</returns>
 		static int AverrageOfArray(List<int> intList)
 		{
 			int sum = 0;
@@ -64,7 +64,11 @@ namespace Task1_Part2
 			}
 			return (intList.Count != 0) ? sum / intList.Count : 0;
 		}
-
+		/// <summary>
+		/// Doubles the characters in the first line that appear in the second
+		/// </summary>
+		/// <param name="firstString"></param>
+		/// <param name="secondString"></param>
 		static void CharDoubler(ref string firstString, string secondString)
 		{
 			for (int i = 0; i < firstString.Length; i++)

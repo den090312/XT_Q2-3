@@ -7,10 +7,10 @@ namespace Language
 	{
 		private static void QuickSort(int[] array, int left, int right)
 		{
-			int i = left; //левый элемент 
-			int j = right; //правый элемент 
-			int piv = array[(i + j) / 2]; //опорный элемент 
-										  //начинаем проход и слева и справа до опроного элемента 
+			int i = left; //left element 
+			int j = right; //right element
+			int piv = array[(i + j) / 2]; //member element
+										  //we start the passage and to the left and to the right of the member element
 			while (i <= j)
 			{
 				while (array[i] < piv)
@@ -27,24 +27,24 @@ namespace Language
 				}
 			}
 			if (left < j)
-				QuickSort(array, left, j); //вызываем сортировку рекурсивно для левого и правого подмассивов, 
-			if (i < right)                 //пока в них есть хотя бы 2 элемента 
+				QuickSort(array, left, j); //call the sort recursively for the left and right subarrays,
+			if (i < right)                 //while they have at least 2 elements 
 				QuickSort(array, i, right);
 		}
 		/// <summary>
-		/// Сортирует целочисленный массив по возрастанию
+		/// Sorts the integer array in ascending order.
 		/// </summary>
-		/// <param name="array">массив для сортировки</param>
+		/// <param name="array">Sort array</param>
 		public static void Sort(int[] array)
 		{
 			QuickSort(array, 0, array.Length - 1);
 		}
 		/// <summary>
-		/// Создёт массив со случайными числами
+		/// Creates an array with random numbers.
 		/// </summary>
-		/// <param name="n">Количество элементов массива</param>
-		/// <param name="maxValue">Число, которое не превышают элементы массива</param>
-		/// <returns>Сгенерированный массив</returns>
+		/// <param name="n">Number of array elements</param>
+		/// <param name="maxValue">A number that does not exceed the elements of the array</param>
+		/// <returns>Generated array</returns>
 		public static int[] GenerateArray(int n, int maxValue)
 		{
 			var array = new int[n];
@@ -56,12 +56,12 @@ namespace Language
 			return array;
 		}
 		/// <summary>
-		/// Создаёт двумерный массив со случайными числами
+		/// Creates a two-dimensional array with random numbers.
 		/// </summary>
-		/// <param name="n">Первая размерность</param>
-		/// <param name="m">Вторая размерность</param>
-		/// <param name="maxValue">Максимальное значение</param>
-		/// <returns>Сгенерированный массив</returns>
+		/// <param name="n">First dimension</param>
+		/// <param name="m">Second dimension</param>
+		/// <param name="maxValue">Maximum value</param>
+		/// <returns>Generated array</returns>
 		public static int[,] GenerateArray(int n, int m, int maxValue)
 		{
 			var array = new int[n, m];
@@ -76,13 +76,13 @@ namespace Language
 			return array;
 		}
 		/// <summary>
-		/// Создаёт трёхмерный массив со случайными числами
+		/// Creates a three-dimensional array with random numbers.
 		/// </summary>
-		/// <param name="n">Первая размерность</param>
-		/// <param name="m">Вторая размерность</param>
-		/// <param name="l">Третья размерность</param>
-		/// <param name="maxValue">Максимальное значение</param>
-		/// <returns>Сгенерированный массив</returns>
+		/// <param name="n">First dimension</param>
+		/// <param name="m">Second dimension</param>
+		/// <param name="l">Third dimension</param>
+		/// <param name="maxValue">Maximum value</param>
+		/// <returns>Generated array</returns>
 		public static int[,,] GenerateArray(int n, int m, int l, int maxValue)
 		{
 			var array = new int[n, m, l];
@@ -100,9 +100,9 @@ namespace Language
 			return array;
 		}
 		/// <summary>
-		/// Выводит массив в консоль
+		/// Output array to console
 		/// </summary>
-		/// <param name="array">Массив для вывода</param>
+		/// <param name="array">Output array</param>
 		public static void PrintArray(int[] array)
 		{
 			foreach (int x in array)
@@ -112,9 +112,9 @@ namespace Language
 			Console.WriteLine();
 		}
 		/// <summary>
-		/// Выводит двумерный массив в консоль
+		/// Prints a two-dimensional array to the console.
 		/// </summary>
-		/// <param name="array">Массив для вывода</param>
+		/// <param name="array">Output array</param>
 		public static void PrintArray(int[,] array, int n, int m)
 		{
 			for (int i = 0; i < n; i++)
@@ -127,9 +127,9 @@ namespace Language
 			}
 		}
 		/// <summary>
-		/// Выводит трёхмерный массив в консоль
+		/// Prints a three-dimensional array to the console.
 		/// </summary>
-		/// <param name="array">Массив для вывода</param>
+		/// <param name="array">Output array</param>
 		public static void PrintArray(int[,,] array)
 		{
 			foreach (int x in array)
@@ -139,10 +139,10 @@ namespace Language
 			Console.WriteLine();
 		}
 		/// <summary>
-		/// Находит максимальное значение в массиве
+		/// Finds the maximum value in the array
 		/// </summary>
-		/// <param name="array">Массив для поиска</param>
-		/// <returns>Максимальное значение в массиве</returns>
+		/// <param name="array">Search array</param>
+		/// <returns>The maximum value in the array</returns>
 		public static int MaxValue(int[] array)
 		{
 			int max = array[0];
@@ -154,10 +154,10 @@ namespace Language
 			return max;
 		}
 		/// <summary>
-		/// Находит минимальное значение в массиве
+		/// Finds the minimum value in the array
 		/// </summary>
-		/// <param name="array">Массив для поиска</param>
-		/// <returns>Минимальный элемент массива</returns>
+		/// <param name="array">Search array</param>
+		/// <returns>Minimum array element</returns>
 		public static int MinValue(int[] array)
 		{
 			int min = array[0];
@@ -169,10 +169,10 @@ namespace Language
 			return min;
 		}
 		/// <summary>
-		/// Возвращает сумму неотрицательных элементов в массиве
+		/// Returns the sum of non-negative elements in an array.
 		/// </summary>
-		/// <param name="array">Массив для поиска</param>
-		/// <returns>Сумма неотрицательных элементов в массиве</returns>
+		/// <param name="array">Search array</param>
+		/// <returns>The sum of non-negative elements in the array</returns>
 		public static int NonNegativeSum(int[] array)
 		{
 			int sum = 0;
@@ -186,12 +186,12 @@ namespace Language
 			return sum;
 		}
 		/// <summary>
-		/// Возвращает сумму элементов, стоящих на чётных местах в двумерном массиве
+		/// Returns the sum of elements at even places in a two-dimensional array.
 		/// </summary>
-		/// <param name="array">Массив для поиска</param>
-		/// <param name="n">Первая размерность массива</param>
-		/// <param name="m">Вторая размерность массива</param>
-		/// <returns>Сумма элементов, стоящих на чётных местах в двумерном массиве</returns>
+		/// <param name="array">Search array</param>
+		/// <param name="n">The first dimension of the array</param>
+		/// <param name="m">The second dimension of the array</param>
+		/// <returns>The sum of elements standing in even places in a two-dimensional array</returns>
 		public static int Sum2D(int[,] array, int n, int m)
 		{
 			int sum = 0;
@@ -208,12 +208,12 @@ namespace Language
 			return sum;
 		}
 		/// <summary>
-		/// Заменяет все положительные числа на нули в трёхмерном массиве
+		/// Replaces all positive numbers with zeros in a three-dimensional array.
 		/// </summary>
-		/// <param name="array">Массив</param>
-		/// <param name="n">Первая размерность</param>
-		/// <param name="m">Вторая размерность</param>
-		/// <param name="l">Третья размерность</param>
+		/// <param name="array">Array</param>
+		/// <param name="n">First dimension</param>
+		/// <param name="m">Second dimension</param>
+		/// <param name="l">Third dimension</param>
 		public static void NoPositive(int[,,] array, int n, int m, int l)
 		{
 			for (int i = 0; i < n; i++)
@@ -235,93 +235,93 @@ namespace Language
 	{
 		static void Main(string[] args)
 		{
-			/*******Задание 1.7, 1.9*********/
-			Console.WriteLine("Задание 1.7, 1.9");
-			Console.Write("Введите число n: ");
+			/*******Tasks 1.7, 1.9*********/
+			Console.WriteLine("Tasks 1.7, 1.9");
+			Console.Write("Enter number n: ");
 			if (!int.TryParse(Console.ReadLine(), out int n) && n > 0)
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine(".");
 				return;
 			}
-			Console.Write("Введите максимальную границу массива: ");
+			Console.Write("Enter maximum array limit: ");
 			if (!int.TryParse(Console.ReadLine(), out int maxValue))
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
 			int[] array = ArrayOperations.GenerateArray(n, maxValue);
 
-			Console.WriteLine("Массив до сортировки: ");
+			Console.WriteLine("Array before sorting: ");
 			ArrayOperations.PrintArray(array);
 
 			ArrayOperations.Sort(array);
-			Console.WriteLine("Массив после сортировки: ");
+			Console.WriteLine("Array after sorting: ");
 			ArrayOperations.PrintArray(array);
 
-			Console.WriteLine("Максимальное значение в массиве: {0}, минимальное значение в массиве: {1}", ArrayOperations.MaxValue(array), ArrayOperations.MinValue(array));
+			Console.WriteLine("Maximum value in array: {0}, minimum value in array: {1}", ArrayOperations.MaxValue(array), ArrayOperations.MinValue(array));
 
-			Console.WriteLine("Сумма неотрицательных элементов: {0}", 
+			Console.WriteLine("Sum of non-negative elements: {0}", 
 				ArrayOperations.NonNegativeSum(array));
 
 			/********Задание 1.10**********/
-			Console.WriteLine("Задание 1.10");
-			Console.Write("Введите первую размерность массива: ");
+			Console.WriteLine("Task 1.10");
+			Console.Write("Enter the first dimension of the array: ");
 			if (!int.TryParse(Console.ReadLine(), out int n1) && n1 > 0)
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
-			Console.Write("Введите вторую размерность массива: ");
+			Console.Write("Enter the second dimension of the array: ");
 			if (!int.TryParse(Console.ReadLine(), out int m1) && m1 > 0)
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
-			Console.Write("Введите максимальную границу массива: ");
+			Console.Write("Enter maximum array limit: ");
 			if (!int.TryParse(Console.ReadLine(), out int maxValue1))
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
 
 			int[,] array2D = ArrayOperations.GenerateArray(n1, m1, maxValue1);
-			Console.WriteLine("Полученный массив: ");
+			Console.WriteLine("Received array: ");
 			ArrayOperations.PrintArray(array2D, n1, m1);
-			Console.WriteLine("Сумма элементов, стоящих на чётных позициях: {0}",
+			Console.WriteLine("The sum of the elements standing in even positions: {0}",
 				ArrayOperations.Sum2D(array2D, n1, m1));
 
 			/********Задание 1.8**********/
-			Console.WriteLine("Задание 1.8");
-			Console.Write("Введите первую размерность массива: ");
+			Console.WriteLine("Task 1.8");
+			Console.Write("Enter the first dimension of the array: ");
 			if (!int.TryParse(Console.ReadLine(), out int n2) && n2 > 0)
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
-			Console.Write("Введите вторую размерность массива: ");
+			Console.Write("Enter the second dimension of the array: ");
 			if (!int.TryParse(Console.ReadLine(), out int m2) && m2 > 0)
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
-			Console.Write("Введите третью размерность массива: ");
+			Console.Write("Enter the third dimension of the array: ");
 			if (!int.TryParse(Console.ReadLine(), out int k2) && k2 > 0)
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
-			Console.Write("Введите максимальную границу массива: ");
+			Console.Write("Enter maximum array limit: ");
 			if (!int.TryParse(Console.ReadLine(), out int maxValue2))
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
 		
 			int[,,] array3D = ArrayOperations.GenerateArray(n2, m2, k2, maxValue2);
-			Console.WriteLine("Массив до изменений: ");
+			Console.WriteLine("Array before changes: ");
 			ArrayOperations.PrintArray(array3D);
 			ArrayOperations.NoPositive(array3D, n2, m2, k2);
-			Console.WriteLine("Массив после изменений: ");
+			Console.WriteLine("Array after changes: ");
 			ArrayOperations.PrintArray(array3D);
 		}
 	}

@@ -6,73 +6,73 @@ namespace Task0
 	{
 		static void Main(string[] args)
 		{
-			/************Задание №1************/
-			Console.Write("№1. Введите положительное целое число N: ");
+			/************Task №1************/
+			Console.Write("№1. Enter a positive integer N: ");
 			if (uint.TryParse(Console.ReadLine(), out uint N))
 			{
 				if (N == 0)
 				{
-					Console.Write("Неверно введены данные.");
+					Console.Write("Incorrect data entered.");
 					return;
 				}
 				else
 				{
-					Console.WriteLine("Полученная строка: {0}", Sequence(N));
+					Console.WriteLine("Received string: {0}", GenerateSequence(N));
 				}
 			}
 			else
 			{
-				Console.Write("Неверно введены данные.");
+				Console.Write("Incorrect data entered.");
 				return;
 			}
 			/************Задание №2************/
-			Console.Write("№2. Введите положительное целое число M: ");
+			Console.Write("№2. Enter a positive integer M: ");
 			if (uint.TryParse(Console.ReadLine(), out uint M))
 			{
 				if (N == 0)
 				{
-					Console.Write("Неверно введены данные.");
+					Console.Write("Incorrect data entered.");
 					return;
 				}
 				else
 				{
-					if (Simple(M))
-						Console.WriteLine("Число M простое.");
+					if (IsSimple(M))
+						Console.WriteLine("M number is simple.");
 					else
-						Console.WriteLine("Число M не простое.");
+						Console.WriteLine("M number isn't simple.");
 				}
 			}
 			else
 			{
-				Console.Write("Неверно введены данные.");
+				Console.Write("Incorrect data entered.");
 				return;
 			}
-			/************Задание №3************/
-			Console.Write("№3. Введите положительное нечётное целое число L: ");
+			/************Task №3************/
+			Console.Write("№3. Enter a positive not simple integer L: ");
 			if (uint.TryParse(Console.ReadLine(), out uint L))
 			{
 				if (N == 0 || L % 2 == 0)
 				{
-					Console.Write("Неверно введены данные.");
+					Console.Write("Incorrect data entered.");
 					return;
 				}
 				else
 				{
-					Square(L);
+					PrintSquare(L);
 				}
 			}
 			else
 			{
-				Console.Write("Неверно введены данные.");
+				Console.Write("Incorrect data entered.");
 				return;
 			}
 		}
 		/// <summary>
-		/// Формирует и возвращает строку вида 1, 2, 3, … N (положительное число).
+		/// Generates and returns a string of the form 1, 2, 3, … N (positive integer).
 		/// </summary>
-		/// <param name="N">Положительное число.</param>
-		/// <returns>Строка вида 1, 2, 3, … N (положительное число).</returns>
-		static string Sequence(uint N)
+		/// <param name="N">Positive integer.</param>
+		/// <returns>String of the form 1, 2, 3, … N (positive integer).</returns>
+		static string GenerateSequence(uint N)
 		{
 			string result = string.Empty;
 			for (int i = 1; i <= N; i++)
@@ -86,11 +86,11 @@ namespace Task0
 			return result;
 		}
 		/// <summary>
-		/// Определяет, является ли заданное число N (положительное целое) простым.
+		/// Determines whether the given number N (positive integer) is simple.
 		/// </summary>
-		/// <param name="N">Положительное число.</param>
-		/// <returns>bool - является ли число простым.</returns>
-		static bool Simple(uint N)
+		/// <param name="N">Positive integer.</param>
+		/// <returns>bool - is the number simple.</returns>
+		static bool IsSimple(uint N)
 		{
 			for (int i = 2; i <= Convert.ToInt32(Math.Sqrt(N)); i++)
 			{
@@ -102,15 +102,15 @@ namespace Task0
 			return true;
 		}
 		/// <summary>
-		/// Выводит на экран квадрат из звёздочек со стороной равной N (положительное нечётное целое число).
+		/// Displays a square of stars with a side equal to N (positive odd integer).
 		/// </summary>
-		/// <param name="N">Положительное нечётное целое число</param>
-		static void Square(uint N)
+		/// <param name="N">Positive odd integer</param>
+		static void PrintSquare(uint N)
 		{
-			uint center = N / 2 + 1;
-			for (int i = 1; i <= N; i++)
+			uint center = N / 2;
+			for (int i = 0; i < N; i++)
 			{
-				for (int j = 1; j <= N; j++)
+				for (int j = 0; j < N; j++)
 				{
 					if (i != center || j != center)
 					{
