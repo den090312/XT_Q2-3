@@ -11,10 +11,10 @@ namespace Task2_6
 			int outerRadius = 6;
 			int innerRadius = 4;
 			Ring ring = new Ring(point, outerRadius, innerRadius);
-			Console.WriteLine("Кольцо, с центром в точке: [{0}, {1}]", ring.Center.X, ring.Center.Y);
-			Console.WriteLine("Радиусы: {0}, {1}", ring.InnerRadius, ring.OuterRadius);
-			Console.WriteLine("Общая длина окружностей: {0}", ring.SummaryLength);
-			Console.WriteLine("Площадь: {0}", ring.Area);
+			Console.WriteLine("Ring, centered on point: [{0}, {1}]", ring.Center.X, ring.Center.Y);
+			Console.WriteLine("Radii: {0}, {1}", ring.InnerRadius, ring.OuterRadius);
+			Console.WriteLine("Total circumference: {0}", ring.SummaryLength);
+			Console.WriteLine("Area: {0}", ring.Area);
 		}
 	}
 

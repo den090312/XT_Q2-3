@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task2_8
 {
@@ -15,9 +11,9 @@ namespace Task2_8
 			mage.FireStorm(warrior);
 			warrior.BladeFurry(mage);
 			Wolf wolf = new Wolf(new Vector2D(0, 0));
-			Console.WriteLine("wolf spawned here: [{0}, {1}]", wolf.Position.X, wolf.Position.Y);
+			Console.WriteLine("Wolf spawned here: [{0}, {1}]", wolf.Position.X, wolf.Position.Y);
 			wolf.Move();
-			Console.WriteLine("wolf moved here: [{0}, {1}]", wolf.Position.X, wolf.Position.Y);
+			Console.WriteLine("Wolf moved here: [{0}, {1}]", wolf.Position.X, wolf.Position.Y);
 
 			Console.WriteLine("Stats of a mage before eating bonuses:");
 			Console.WriteLine("Speed: {0}", mage.Speed);

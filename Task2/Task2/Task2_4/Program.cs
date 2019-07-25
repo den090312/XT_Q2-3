@@ -10,11 +10,11 @@ namespace Task2_4
 			char[] array2 = { 'a', 'b', 'c', 'e', 'f' };
 			MyString myString1 = new MyString(array1);
 			MyString myString2 = new MyString(array2);
-			Console.WriteLine("Первая строка: {0}", myString1);
-			Console.WriteLine("Вторая строка: {0}", myString2);
-			Console.WriteLine("Равенство строк: {0}", myString1 == myString2);
-			Console.WriteLine("Третий элемент в первой строке: {0}", myString1[2]);
-			Console.WriteLine("Первая строка больше чем вторая строка: {0}", myString1 > myString2);
+			Console.WriteLine("First line: {0}", myString1);
+			Console.WriteLine("Second line: {0}", myString2);
+			Console.WriteLine("Line Equality: {0}", myString1 == myString2);
+			Console.WriteLine("The third element in the first line: {0}", myString1[2]);
+			Console.WriteLine("The first line is larger than the second line: {0}", myString1 > myString2);
 		}
 	}
 
@@ -22,7 +22,7 @@ namespace Task2_4
 	{
 		private char[] str;
 		/// <summary>
-		/// Длина строки
+		/// String length
 		/// </summary>
 		public int Length { get => str.Length; }
 		public MyString()
@@ -67,15 +67,15 @@ namespace Task2_4
 			return newStr;
 		}
 		/// <summary>
-		/// Переводит MyString в массив char
+		/// Translate MyString to char array
 		/// </summary>
 		/// <returns>Массив char</returns>
 		public char[] ToCharArray() => str;
 		/// <summary>
-		/// Возвращает индекс первого вхождения символа symbol в строке
+		/// Returns the index of the first occurrence of a symbol in a string.
 		/// </summary>
-		/// <param name="symbol">Символ для поиска</param>
-		/// <returns>Индекс вхождения</returns>
+		/// <param name="symbol">Search character</param>
+		/// <returns>Index of occurrence</returns>
 		public int Find(char symbol)
 		{
 			for (int i = 0; i < str.Length; i++)

@@ -7,28 +7,28 @@ namespace Task2_1
 	{
 		static void Main(string[] args)
 		{
-			Console.Write("Введите радиус окружности: ");
+			Console.Write("Enter the radius of the circle: ");
 			if (!double.TryParse(Console.ReadLine(), out double radius) || radius <= 0)
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
-			Console.Write("Введите координату центра X: ");
+			Console.Write(" X: ");
 			if (!double.TryParse(Console.ReadLine(), out double x))
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
-			Console.Write("Введите координату центра Y: ");
+			Console.Write("Enter the center coordinate Y: ");
 			if (!double.TryParse(Console.ReadLine(), out double y))
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
 			Round round = new Round(radius, x, y);
-			Console.Write("Длина описанной окружности: ");
+			Console.Write("Circumference: ");
 			Console.WriteLine(round.Length);
-			Console.Write("Площадь круга: ");
+			Console.Write("Area of a circle: ");
 			Console.WriteLine(round.Area);
 		}
 	}
@@ -55,15 +55,13 @@ namespace Task2_1
 			this.Center = new Point2D(X, Y);
 		}
 		/// <summary>
-		/// Длина описанной окружности
+		/// Circumference
 		/// </summary>
 		public double Length
 		{
 			get => 2 * Math.PI * Radius;
 		}
-		/// <summary>
-		/// Площадь круга
-		/// </summary>
+
 		public double Area
 		{
 			get => Math.PI * Radius * Radius;

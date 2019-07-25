@@ -6,34 +6,34 @@ namespace Task2_3
 	{
 		static void Main(string[] args)
 		{
-			Console.Write("Введите имя: ");
+			Console.Write("Enter name: ");
 			string Name = Console.ReadLine();
 			if (Name == "")
 			{
-				Console.WriteLine("Неверно введены данные");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
-			Console.Write("Введите фамилию: ");
+			Console.Write("Enter last name: ");
 			string Surname = Console.ReadLine();
 			if (Surname == "")
 			{
-				Console.WriteLine("Неверно введены данные");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
-			Console.Write("Введите отчество: ");
+			Console.Write("Enter middle name: ");
 			string Patronymic = Console.ReadLine();
 			if (Patronymic == ""){
-				Console.WriteLine("Неверно введены данные");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
-			Console.Write("Введите дату рождения в формате dd.mm.yyyy: ");
+			Console.Write("Enter the date of birth in the format dd.mm.yyyy: ");
 			if (!DateTime.TryParse(Console.ReadLine(), out DateTime Birthdate))
 			{
-				Console.WriteLine("Неверно введены данные");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
 			User user = new User(Name, Surname, Patronymic, Birthdate);
-			Console.WriteLine("Возраст {0}а {1}а {2}а: {3}", user.Surname, user.Name, user.Patronymic, user.Age);
+			Console.WriteLine("The age of {0} {1} {2}: {3}", user.Surname, user.Name, user.Patronymic, user.Age);
 		}
 	}
 
@@ -42,9 +42,7 @@ namespace Task2_3
 		private string name;
 		private string surname;
 		private string patronymic;
-		/// <summary>
-		/// Имя
-		/// </summary>
+
 		public string Name
 		{
 			set
@@ -55,9 +53,7 @@ namespace Task2_3
 			}
 			get => name;
 		}
-		/// <summary>
-		/// Фамилия
-		/// </summary>
+
 		public string Surname
 		{
 			set
@@ -68,9 +64,7 @@ namespace Task2_3
 			}
 			get => surname;
 		}
-		/// <summary>
-		/// Отчество
-		/// </summary>
+
 		public string Patronymic
 		{
 			set
@@ -81,13 +75,9 @@ namespace Task2_3
 			}
 			get => patronymic;
 		}
-		/// <summary>
-		/// Дата рождения
-		/// </summary>
+
 		public DateTime Birthdate { private set; get; }
-		/// <summary>
-		/// Возраст
-		/// </summary>
+
 		public int Age
 		{
 			get => DateTime.Now.Year - Birthdate.Year;

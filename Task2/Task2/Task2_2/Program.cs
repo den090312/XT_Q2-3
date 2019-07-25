@@ -6,28 +6,28 @@ namespace Task2_2
 	{
 		static void Main(string[] args)
 		{
-			Console.Write("Введите сторону А: ");
+			Console.Write("Enter side A: ");
 			if (!double.TryParse(Console.ReadLine(), out double A) || A <= 0)
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
-			Console.Write("Введите сторону B: ");
+			Console.Write("Enter side B: ");
 			if (!double.TryParse(Console.ReadLine(), out double B) || B <= 0)
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
-			Console.Write("Введите сторону C: ");
+			Console.Write("Enter side C: ");
 			if (!double.TryParse(Console.ReadLine(), out double C) || C <= 0)
 			{
-				Console.WriteLine("Неверно введены данные.");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
 			Triangle triangle = new Triangle(A, B, C);
-			Console.Write("Периметр треугольника: ");
+			Console.Write("Perimeter of a triangle: ");
 			Console.WriteLine(triangle.Perimeter);
-			Console.Write("Площадь треугольника: ");
+			Console.Write("Perimeter of a triangle: ");
 			Console.WriteLine(triangle.Area);
 		}
 	}
@@ -74,9 +74,7 @@ namespace Task2_2
 			this.B = B;
 			this.C = C;
 		}
-		/// <summary>
-		/// Площадь треугольника
-		/// </summary>
+
 		public double Area
 		{
 			get
@@ -85,9 +83,7 @@ namespace Task2_2
 				return Math.Sqrt(p * (p - A) * (p - B) * (p - C));
 			}
 		}
-		/// <summary>
-		/// Периметр треугольника
-		/// </summary>
+
 		public double Perimeter
 		{
 			get => A + B + C;

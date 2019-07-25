@@ -8,12 +8,12 @@ namespace Task2_5
 		static void Main(string[] args)
 		{
 			Employee employee = new Employee(1, "Student", "Denis", "Andriyanov", "Alexandrovich", DateTime.Parse("08.07.1999"));
-			Console.WriteLine("Имя: {0}", employee.Name);
-			Console.WriteLine("Фамилия: {0}", employee.Surname);
-			Console.WriteLine("Отчество: {0}", employee.Patronymic);
-			Console.WriteLine("Дата рождения: {0:dd.MM.yyyy}", employee.Birthdate);
-			Console.WriteLine("Должность: {0}", employee.Position);
-			Console.WriteLine("Стаж: {0}", employee.Expirience);
+			Console.WriteLine("Name: {0}", employee.Name);
+			Console.WriteLine("Surname: {0}", employee.Surname);
+			Console.WriteLine("Patronymic: {0}", employee.Patronymic);
+			Console.WriteLine("Birthdate: {0:dd.MM.yyyy}", employee.Birthdate);
+			Console.WriteLine("Position: {0}", employee.Position);
+			Console.WriteLine("Expirience: {0}", employee.Expirience);
 		}
 	}
 
