@@ -163,23 +163,23 @@ namespace Hardcore_Dynamic_Array
 		{
 			List<int> list = new List<int> { 3, 3, 222, 444, 333, 999 };
 			HardcoreDynamicArray<int> hda = new HardcoreDynamicArray<int>(list);
-			Console.Write("Массив после изменения Capacity: ");
+			Console.Write("Array after changing Capacity: ");
 			hda.Capacity = 7;
 			foreach (int item in hda)
 			{
 				Console.Write(item + " ");
 			}
 			Console.WriteLine();
-			Console.WriteLine("Последний элемент: {0}", hda[-1]);
+			Console.WriteLine("Last item: {0}", hda[-1]);
 			HardcoreDynamicArray<int> hda2 = (HardcoreDynamicArray<int>)hda.Clone();
-			Console.Write("Копия массива: ");
+			Console.Write("Copy array: ");
 			foreach (int item in hda2)
 			{
 				Console.Write(item + " ");
 			}
 			Console.WriteLine();
 			CycledArray<int> dontDoIt = new CycledArray<int>(list);
-			Console.WriteLine("Это вывод циклического массива. Для старта нажмите любую клавишу. ");
+			Console.WriteLine("This is a cyclic array output. To start, press any key.");
 			Console.ReadKey();
 			foreach (int item in dontDoIt)
 			{

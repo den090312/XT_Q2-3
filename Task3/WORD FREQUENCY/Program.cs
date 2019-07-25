@@ -7,22 +7,22 @@ namespace WORD_FREQUENCY
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Введите текст:");
+			Console.WriteLine("Enter text:");
 			string text = Console.ReadLine();
 
 			Dictionary<string, int> wordsFrequency = WordsFrequncy(text);
 
 			foreach (string word in wordsFrequency.Keys)
 			{
-				Console.WriteLine("Слово \"{0}\" встречается: {1} раз", word, wordsFrequency[word]);
+				Console.WriteLine("The word \"{0} \" occurs: {1} times", word, wordsFrequency[word]);
 			}
-		} 
+		}
 
 		/// <summary>
-		/// Подсчитывает встречаемость слов в тексте без учёта регистра
+		/// Calculates the occurrence of words in the text case-insensitive.
 		/// </summary>
-		/// <param name="text">Текст для поиска</param>
-		/// <returns>Словарь, где key - слово в тексте, а value - его количество в тексте</returns>
+		/// <param name="text">Search text</param>
+		/// <returns>Dictionary, where key is a word in the text, and value is its number in the text.</returns>
 		static Dictionary<string, int> WordsFrequncy(string text)
 		{
 			string[] words = text.Split(new char[] { ' ', '.' }, StringSplitOptions.RemoveEmptyEntries);

@@ -10,42 +10,42 @@ namespace DYNAMIC_ARRAY
 		{
 			DynamicArray<int> array = new DynamicArray<int>();
 
-			//Вставка IEnumerable
+			//Insert IEnumerable
 			List<int> vs = new List<int> { 0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0, 1, 2, 3, 4, 0, 1, 2, 3, 4 };
 			array.AddRange(vs);
 
-			//Вывод по индексу
-			Console.WriteLine("Вывод по индексу 0: {0}", array[0]);
+			//Index output
+			Console.WriteLine("Output at index 0: {0}", array[0]);
 
-			//Вывод foreach
-			Console.Write("Вывод foreach: ");
+			//Foreach output
+			Console.Write("Foreach output: ");
 			foreach (int x in array)
 			{
 				Console.Write(x + " ");
 			}
 			Console.WriteLine();
 
-			//Вставка по индексу
+			//Insert by index
 			array.Insert(999, 3);
-			Console.Write("Вставка в позицию 3 числа 999: ");
+			Console.Write("Insert at position 3 of number 999: ");
 			foreach (int x in array)
 			{
 				Console.Write(x + " ");
 			}
 			Console.WriteLine();
 
-			//Удаление
-			Console.Write("Введите число для удаления: ");
+			//Deleting
+			Console.Write("Enter the number to delete: ");
 			if (!int.TryParse(Console.ReadLine(), out int res))
 			{
-				Console.WriteLine("Неверно введено число.");
+				Console.WriteLine("Invalid number entered.");
 				return;
 			}
 			if (!array.Remove(res))
-				Console.WriteLine("Число не найдено.");
+				Console.WriteLine("Number not found.");
 			else
 			{
-				Console.Write("Удаление числа {0}: ", res);
+				Console.Write("Delete number {0}: ", res);
 				foreach (int x in array)
 				{
 					Console.Write(x + " ");
@@ -53,9 +53,9 @@ namespace DYNAMIC_ARRAY
 				Console.WriteLine();
 			}
 
-			//Создание массива из IEnumerable
+			//Creating an array of IEnumerable
 			DynamicArray<int> vs1 = new DynamicArray<int>(vs);
-			Console.Write("Создание массива из IEnumerable: ");
+			Console.Write("Creating an array of IEnumerable: ");
 			foreach (int x in vs1)
 			{
 				Console.Write(x + " ");
@@ -68,13 +68,9 @@ namespace DYNAMIC_ARRAY
 	public class DynamicArray<T> : IEnumerable, IEnumerable<T>
 	{
 		protected T[] array;
-		/// <summary>
-		/// Длина массива
-		/// </summary>
+
 		public int Length { get; protected set; }
-		/// <summary>
-		/// Ёмкость массива
-		/// </summary>
+
 		public int Capacity
 		{
 			get => array.Length;
@@ -94,10 +90,10 @@ namespace DYNAMIC_ARRAY
 			}
 		}
 		/// <summary>
-		/// Возвращает элемент массива по индексу
+		/// Returns an array element by index
 		/// </summary>
-		/// <param name="index">Индекс элемента</param>
-		/// <returns>Элемент массива</returns>
+		/// <param name="index">Item Index</param>
+		/// <returns>Array element</returns>
 		public T this[int index]
 		{
 			get
@@ -130,7 +126,7 @@ namespace DYNAMIC_ARRAY
 		public DynamicArray(IEnumerable<T> ts)
 		{
 			int additCapacity = 8;
-			//Считаем количество элементов IEnumerable на входе
+			//Count the number of IEnumerable elements at the input
 			int tsLength = 0;
 			foreach (T item in ts)
 			{
@@ -149,9 +145,9 @@ namespace DYNAMIC_ARRAY
 		}
 
 		/// <summary>
-		/// Добавляет элемент в массив
+		/// Adds an element to an array
 		/// </summary>
-		/// <param name="element">Элемент для добавления</param>
+		/// <param name="element">Item to add</param>
 		public void Add(T element)
 		{
 			if (Length > Capacity)
@@ -161,18 +157,18 @@ namespace DYNAMIC_ARRAY
 		}
 
 		/// <summary>
-		/// Добавляет все элементы из IEnumerable в конец массива
+		/// Adds all items from IEnumerable to the end of the array.
 		/// </summary>
 		/// <param name="ts">IEnumerable</param>
 		public void AddRange(IEnumerable<T> ts)
 		{
-			//Считаем количество элементов IEnumerable на входе
+			//Count the number of IEnumerable elements at the input
 			int tsLength = 0;
 			foreach (T item in ts)
 			{
 				tsLength++;
 			}
-			//Выделяем капасити и пересоздаём массив(если нужно)
+			//Select capacity and re-create the array (if needed)
 			if (Length + tsLength > Capacity)
 			{
 				int additionalCapacity = 8;
@@ -182,7 +178,7 @@ namespace DYNAMIC_ARRAY
 				Capacity = newCapacity;
 				buff.CopyTo(array, 0);
 			}
-			//Добавляем элементы из IEnumerable в массив 
+			//We add elements from IEnumerable to an array
 			int index = Length;
 			foreach (T item in ts)
 			{
@@ -193,10 +189,10 @@ namespace DYNAMIC_ARRAY
 		}
 
 		/// <summary>
-		/// Вставяет новый элемент в позицию index
+		/// Insert new item at index position
 		/// </summary>
-		/// <param name="element">Элемент для вставки</param>
-		/// <param name="index">Позиция для вставки</param>
+		/// <param name="element">Item to insert</param>
+		/// <param name="index">Position to insert</param>
 		public void Insert(T element, int index)
 		{
 			if (index < 0 || index >= Length)
@@ -212,10 +208,10 @@ namespace DYNAMIC_ARRAY
 		}
 
 		/// <summary>
-		/// Удаляет из массива первое вхождение элемента
+		/// Removes the first occurrence of an element from an array.
 		/// </summary>
-		/// <param name="elem">Элемент для удаления</param>
-		/// <returns>true, если элемент был удален. Иначе false.</returns>
+		/// <param name="elem">Item to remove</param>
+		/// <returns>true if the item has been deleted. Otherwise false.</returns>
 		public bool Remove(T elem)
 		{
 			for (int i = 0; i < Length; i++)

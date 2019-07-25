@@ -7,10 +7,10 @@ namespace LOST
 	{
 		static void Main(string[] args)
 		{
-			Console.Write("Введите количество участников: ");
+			Console.Write("Enter the number of participants: ");
 			if (!int.TryParse(Console.ReadLine(), out int N))
 			{
-				Console.WriteLine("Неверно введены данные");
+				Console.WriteLine("Incorrect data entered.");
 				return;
 			}
 			else
@@ -21,10 +21,10 @@ namespace LOST
 			}
 		}
 		/// <summary>
-		/// Заполняет список участников
+		/// Fill in the list of participants
 		/// </summary>
-		/// <param name="participantList">Список</param>
-		/// <param name="count">Количество участников</param>
+		/// <param name="participantList">List</param>
+		/// <param name="count">Number of participants</param>
 		static void GenerateList(List<Participant> participantList, int count)
 		{
 			for (int i = 0; i < count; i++)
@@ -33,9 +33,9 @@ namespace LOST
 			}
 		}
 		/// <summary>
-		/// Моделирует процесс игры
+		/// Simulates the game process
 		/// </summary>
-		/// <param name="participantList">Список участников</param>
+		/// <param name="participantList">List of participants</param>
 		static void GenerateProcess(List<Participant> participantList)
 		{
 			int current = 0; //Счётчик для массива
@@ -61,12 +61,12 @@ namespace LOST
 		}
 	}
 	/// <summary>
-	/// Класс участника игры
+	/// Game participant
 	/// </summary>
 	class Participant
 	{
 		/// <summary>
-		/// Порядковый номер в игре
+		/// Order number in the game
 		/// </summary>
 		public int Index { get; } 
 		public Participant(int Index)
