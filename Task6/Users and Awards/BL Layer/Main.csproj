@@ -3,13 +3,14 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <RootNamespace>DA_Layer</RootNamespace>
+    <RootNamespace>BL_Layer</RootNamespace>
     <ApplicationIcon />
     <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Classes\Classes.csproj" />
+    <ProjectReference Include="..\DA Layer\DA Layer.csproj" />
   </ItemGroup>
 
 </Project>

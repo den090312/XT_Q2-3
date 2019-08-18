@@ -1,6 +1,7 @@
-﻿using DAL.Storages;
+﻿using BLL.Storages;
+using DAL.Storages;
 
-namespace Dependencies
+namespace BLL
 {
 	static class Dependencies
 	{
