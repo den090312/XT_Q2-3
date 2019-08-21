@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>REGISTRATION FORM</title>
+    <meta charset="utf-8">
+    <style>
+        .main {
+            width: 400px;
+            border: 3px solid #0381bf;
+            background-color: #0690cf;
+            padding: 0;
+        }
+
+        .p1 {
+            margin: 16px 16px;
+            font-size: 30px;
+            color: #FFF;
+        }
+
+        hr {
+            color: #FFF;
+            margin: 0;
+        }
+
+        .label {
+            display: block;
+            color: #FFF;
+        }
+
+        .email {
+            margin: 32px 32px 0 16px;
+        }
+
+        .passwords {
+            display: flex;
+        }
+
+        .password {
+            margin: 16px;
+        }
+
+        .email-input {
+            width: 350px;
+        }
+
+        .button {
+            background-color: #ffdf7f;
+            margin: 16px 16px;
+            border: none;
+            padding: 4px 8px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main">
+        <form>
+            <p class="p1">
+                Регистрация
+            </p>
+            <hr>
+            <div class="email"> 
+                <label class="label" for="email">E-mail</label>
+                <input class="email-input" type="email" id="email">
+            </div>
+            <div class="passwords">
+                <div class="password">
+                    <label class="label" for="password">Пароль</label>
+                    <input type="password" id="password">
+                </div>
+                <div class="password">
+                    <label class="label" for="password2">Ещё раз</label>
+                    <input type="password" id="password2">
+                </div>
+            </div>
+            <button class="button">Отправить</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
